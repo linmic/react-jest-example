@@ -26,4 +26,13 @@ describe('async example', () => {
       });
     });
   });
+
+  it('works with async', async () => {
+    const result = await axios.get(`${apiURL}/users/1`);
+
+    expect(result.data).toMatchObject({
+      name: 'Linmic',
+      age: 32,
+    });
+  });
 });
