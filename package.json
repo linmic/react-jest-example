@@ -28,9 +28,6 @@
       "src/**/*.js",
       "!**/__tests__/**"
     ],
-    "setupFiles": [
-      "<rootDir>/jest-setup.js"
-    ],
     "testPathIgnorePatterns": [
       "<rootDir>[/\\\\](build|docs|node_modules)[/\\\\]"
     ],
