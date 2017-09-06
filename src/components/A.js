@@ -2,17 +2,14 @@ import React, { Component } from 'react';
 import B from './B';
 
 class A extends Component {
-  constructor(props) {
-    super(props);
+  state = {
+    count: 0,
+    showTitle: false,
+  };
 
-    this.state = {
-      showTitle: false,
-    };
-  }
-
-  foo() {
-    console.log('foo');
-  }
+  foo = () => {
+    this.setState(state => state + 1);
+  };
 
   render() {
     const { bar } = this.props;

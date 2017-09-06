@@ -9,6 +9,6 @@ export const reducer = (count, type) => {
       return count -= 1;
     }
     default:
-      break;
+      return count;
   }
 };

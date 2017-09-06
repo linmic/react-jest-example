@@ -13,6 +13,10 @@ describe('utils', () => {
     it('should -1 to the current count if the type is PLUS_ONE', () => {
       expect(reducer(3, 'MINUS_ONE')).toBe(2);
     });
+
+    it('should do nothing but return the count if no type is given', () => {
+      expect(reducer(3, undefined)).toBe(3);
+    });
   });
 });
 

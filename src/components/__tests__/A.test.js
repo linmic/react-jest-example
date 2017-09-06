@@ -44,6 +44,13 @@ describe('<A />', () => {
     });
   });
 
+  it('should set state.count to 1 if foo() is called', () => {
+    const subject = makeSubject();
+
+    subject.instance().foo();
+    expect(subject.state().count).toBe(1);
+  });
+
   // event simulate with shallow
   it('should call foo when .btn-foo clicked', () => {
     const subject = makeShallowSubject();
