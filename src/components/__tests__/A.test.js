@@ -52,7 +52,7 @@ describe('<A />', () => {
   });
 
   // event simulate with shallow
-  it('should call foo when .btn-foo clicked', () => {
+  it('should call bar props when .btn-bar clicked', () => {
     const subject = makeShallowSubject();
     
     subject.find('.btn-bar').simulate('click');
