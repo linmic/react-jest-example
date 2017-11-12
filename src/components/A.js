@@ -8,7 +8,7 @@ class A extends Component {
   };
 
   foo = () => {
-    this.setState(state => state + 1);
+    this.setState(state => ({ count: state.count + 1 }));
   };
 
   render() {
