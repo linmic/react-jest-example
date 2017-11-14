@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import { render, shallow, mount } from 'enzyme';
+import toJson from 'enzyme-to-json';
 
 describe('<A />', () => {
   let makeSubject;
@@ -22,25 +23,25 @@ describe('<A />', () => {
     makeShallowSubject = () => shallow(<A {...params} />)
     makeRenderSubject = () => render(<A {...params} />);
   });
-  
+
   describe('snapshots', () => {
     // snapshot
     it('should match latest render snapshot', () => {
       const subject = makeRenderSubject();
 
-      expect(subject.html()).toMatchSnapshot();
+      expect(toJson(subject)).toMatchSnapshot();
     });
 
     it('should match latest shallow snapshot', () => {
       const subject = makeShallowSubject();
 
-      expect(subject.html()).toMatchSnapshot();
+      expect(toJson(subject)).toMatchSnapshot();
     });
 
     it('should match latest mount snapshot', () => {
       const subject = makeSubject();
 
-      expect(subject.html()).toMatchSnapshot();
+      expect(toJson(subject)).toMatchSnapshot();
     });
   });
 
@@ -54,7 +55,7 @@ describe('<A />', () => {
   // event simulate with shallow
   it('should call foo when .btn-foo clicked', () => {
     const subject = makeShallowSubject();
-    
+
     subject.find('.btn-bar').simulate('click');
     expect(params.bar).toHaveBeenCalled();
   });
@@ -62,7 +63,7 @@ describe('<A />', () => {
   // event simulate with mount
   it('should call foo when .btn-foo clicked', () => {
     const subject = makeSubject();
-    
+
     subject.instance().foo = jest.fn();
     subject.update();
     subject.find('.btn-foo').simulate('click');
