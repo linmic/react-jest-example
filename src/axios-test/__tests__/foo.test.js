@@ -1,11 +1,10 @@
+jest.mock('../constant');
+
 import axios from 'axios';
 import nock from 'nock';
 import httpAdapter from 'axios/lib/adapters/http';
 
-const host = 'https://jsonplaceholder.typicode.com';
-
-axios.defaults.host = host;
-axios.defaults.adapter = httpAdapter;
+const host = 'http://localhost';
 
 describe('', () => {
   let foo;
@@ -16,11 +15,14 @@ describe('', () => {
     foo = require('../foo').default;
   });
 
-  it('hello', () => {
-    nock(host)
-      .get('/posts')
-      .reply(200, { foo: 'bar' });
+  it('hello', async () => {
+    let scope = nock(host)
+      .get('/posts/1')
+      .reply(200, { 'foo': 'bar' });
 
-    expect(foo()).toMatchObject({ foo: 'bar' });
+    const result = await foo();
+
+    expect(result).toMatchObject({ foo: 'bar' });
+    expect(scope.isDone()).toBeTruthy();
   });
 });
