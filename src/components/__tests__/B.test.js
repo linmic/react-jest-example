@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
+import toJson from 'enzyme-to-json';
 
 describe('<B />', () => {
   let B;
@@ -16,12 +17,12 @@ describe('<B />', () => {
   it('should match shallow snapshot', () => {
     const subject = makeShallowSubject();
 
-    expect(subject.html()).toMatchSnapshot();
+    expect(toJson(subject)).toMatchSnapshot();
   });
 
   it('should match snapshot', () => {
     const subject = makeSubject();
 
-    expect(subject.html()).toMatchSnapshot();
+    expect(toJson(subject)).toMatchSnapshot();
   });
 });

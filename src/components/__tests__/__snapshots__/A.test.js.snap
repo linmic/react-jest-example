@@ -1,7 +1,135 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<A /> snapshots should match latest mount snapshot 1`] = `"<div><h1 style=\\"display: none;\\">title</h1><button class=\\"btn-foo\\">click me</button><button class=\\"btn-bar\\">click me</button><nav><a href=\\"#\\"><!-- react-text: 7 -->I am link <!-- /react-text --><!-- react-text: 8 -->0<!-- /react-text --><!-- react-text: 9 -->.<!-- /react-text --></a><a href=\\"#\\"><!-- react-text: 11 -->I am link <!-- /react-text --><!-- react-text: 12 -->1<!-- /react-text --><!-- react-text: 13 -->.<!-- /react-text --></a><a href=\\"#\\"><!-- react-text: 15 -->I am link <!-- /react-text --><!-- react-text: 16 -->2<!-- /react-text --><!-- react-text: 17 -->.<!-- /react-text --></a></nav></div>"`;
+exports[`<A /> snapshots should match latest mount snapshot 1`] = `
+<A
+  bar={[Function]}
+>
+  <div>
+    <h1
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+    >
+      title
+    </h1>
+    <button
+      className="btn-foo"
+      onClick={[Function]}
+    >
+      click me
+    </button>
+    <button
+      className="btn-bar"
+      onClick={[Function]}
+    >
+      click me
+    </button>
+    <B>
+      <nav>
+        <C
+          id={0}
+          key="0"
+        >
+          <a
+            href="#"
+          >
+            I am link 
+            0
+            .
+          </a>
+        </C>
+        <C
+          id={1}
+          key="1"
+        >
+          <a
+            href="#"
+          >
+            I am link 
+            1
+            .
+          </a>
+        </C>
+        <C
+          id={2}
+          key="2"
+        >
+          <a
+            href="#"
+          >
+            I am link 
+            2
+            .
+          </a>
+        </C>
+      </nav>
+    </B>
+  </div>
+</A>
+`;
 
-exports[`<A /> snapshots should match latest render snapshot 1`] = `"<div><h1 style=\\"display:none;\\">title</h1><button class=\\"btn-foo\\">click me</button><button class=\\"btn-bar\\">click me</button><nav><a href=\\"#\\">I am link 0.</a><a href=\\"#\\">I am link 1.</a><a href=\\"#\\">I am link 2.</a></nav></div>"`;
+exports[`<A /> snapshots should match latest render snapshot 1`] = `
+<div>
+  <h1
+    style="display:none;"
+  >
+    title
+  </h1>
+  <button
+    class="btn-foo"
+  >
+    click me
+  </button>
+  <button
+    class="btn-bar"
+  >
+    click me
+  </button>
+  <nav>
+    <a
+      href="#"
+    >
+      I am link 0.
+    </a>
+    <a
+      href="#"
+    >
+      I am link 1.
+    </a>
+    <a
+      href="#"
+    >
+      I am link 2.
+    </a>
+  </nav>
+</div>
+`;
 
-exports[`<A /> snapshots should match latest shallow snapshot 1`] = `"<div><h1 style=\\"display:none;\\">title</h1><button class=\\"btn-foo\\">click me</button><button class=\\"btn-bar\\">click me</button><nav><a href=\\"#\\">I am link 0.</a><a href=\\"#\\">I am link 1.</a><a href=\\"#\\">I am link 2.</a></nav></div>"`;
+exports[`<A /> snapshots should match latest shallow snapshot 1`] = `
+<div>
+  <h1
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  >
+    title
+  </h1>
+  <button
+    className="btn-foo"
+    onClick={[Function]}
+  >
+    click me
+  </button>
+  <button
+    className="btn-bar"
+    onClick={[Function]}
+  >
+    click me
+  </button>
+  <B />
+</div>
+`;
